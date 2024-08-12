@@ -1,0 +1,273 @@
+:root {
+  --primary: #e2e8f0;
+  --secondary: #1992d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  background-color: var(--secondary);
+  min-height: 100vh;
+  padding: 15px;
+  padding-right: 80px;
+
+  color: white;
+
+  display: grid;
+  align-content: start;
+  row-gap: 2em;
+  grid-row: 1 / 3;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  font-size: 1rem;
+  font-weight: bold;
+
+  display: grid;
+  row-gap: 1em;
+  align-content: start;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  align-content: start;
+  justify-items: start;
+  row-gap: 15px;
+
+  padding: 15px 30px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 0.7em;
+}
+
+input[type="search"] {
+  --pbt: 5px;
+
+  width: 600px;
+  background-color: var(--primary);
+  border: none;
+  padding-left: 10px;
+  padding-bottom: var(--pbt);
+  padding-top: var(--pbt);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.profile-menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  align-content: start;
+  justify-self: end;
+  column-gap: 20px;
+
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.profile-menu img {
+  width: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 10px;
+  align-items: center;
+
+  font-weight: bold;
+}
+
+.profile div:not(.name) {
+  font-size: 0.8rem;
+  align-self: end;
+}
+
+.profile .name {
+  font-size: 1.3rem;
+  align-self: start;
+}
+
+.profile img {
+  grid-row: 1 / 3;
+
+  width: 70px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.header .menu {
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  justify-self: end;
+}
+
+.header .menu ul {
+  color: white;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  column-gap: 20px;
+}
+
+.header .menu li {
+  --pbt: 8px;
+
+  background-color: var(--secondary);
+  padding-top: var(--pbt);
+  padding-bottom: var(--pbt);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.main-content {
+  --border: 12px;
+
+  background-color: var(--primary);
+  padding: 30px 30px 30px 20px;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+.main-content h1 {
+  font-size: 1rem;
+}
+
+.main-content h2 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.projects {
+  grid-row: 1 / 3;
+}
+
+.projects .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projects .container > div {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: var(--border);
+  --webkit-border-radius: var(--border);
+  -moz-border-radius: var(--border);
+  -ms-border-radius: var(--border);
+  -o-border-radius: var(--border);
+  border-left: var(--border) solid #efb223;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projects .container > div div:has(.iconify) {
+  align-self: end;
+}
+
+p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #636363;
+}
+
+.announcements .container,
+.trending .container {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: var(--border);
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+}
+
+.announcements .container div:not(:last-child) {
+  border-bottom: 1px solid var(--primary);
+  margin-bottom: 15px;
+}
+
+.announcements .container div:not(:last-child) p {
+  margin-bottom: 15px;
+}
+
+.announcements p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.trending .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trending .container div {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: start;
+  column-gap: 10px;
+}
+
+.trending img {
+  width: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+  grid-row: 1 / 3;
+}
